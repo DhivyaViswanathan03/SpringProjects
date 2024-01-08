@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!--Target Class -->
+    <bean  class="com.divs.comp.Student">
+    <property name="sid" value="10"></property>
+     <property name="sname" value="divs"></property>
+      <property name="saddress" value="Eriyur"></property>
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>

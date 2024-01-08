@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean id="dtdc" class="com.divs.comp.DTDC" autowire-candidate="false"></bean>
+        <bean id="fFlight" class="com.divs.comp.FirstFlight" autowire-candidate="false"></bean>
+        <bean id="blueDart" class="com.divs.comp.BlueDart" autowire-candidate="false"></bean>
+        
+<!-- <bean id="fpkt" class="com.divs.comp.Flipkart" autowire="byType"> -->
+<!-- 	<property name="discount" value="50.5f"></property> -->
+<!-- </bean> -->
+
+<!-- <bean id="fpkt" class="com.divs.comp.Flipkart" autowire="constructor"> -->
+<bean id="fpkt" class="com.divs.comp.Flipkart" autowire="no">
+<constructor-arg name="discount" value="50.5f"></constructor-arg>
+<constructor-arg name="courier" ref="blueDart" ></constructor-arg>
+</bean>
+
+
+</beans>

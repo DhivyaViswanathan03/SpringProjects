@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<!--Target Class -->
+	<bean id="marks" class="com.divs.comp.MarksInfo">
+		<property name="markInfo">
+			<array>
+				<value>120</value>
+				<value>11</value>
+				<value>21</value>
+				<value>33</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="date" class="java.util.Date"></bean>
+	<bean id="dob" class="java.util.Date">
+		<property name="year" value="93"></property>
+		<property name="month" value="0"></property>
+		<property name="date" value="12"></property>
+	</bean>
+	<bean id="clg" class="com.divs.comp.College">
+		<property name="snames">
+			<list>
+				<value>dhivya</value>
+				<value>mouli</value>
+				<value>priya</value>
+				<value>revathi</value>
+			</list>
+		</property>
+		<property name="dateList">
+			<list>
+				<ref bean="date" />
+				<ref bean="dob" />
+			</list>
+		</property>
+	</bean>
+	<bean id="contact" class="com.divs.comp.ContactInfo">
+		<property name="phoneNumbers">
+			<set value-type="java.lang.Long">
+			    <value>6666</value>
+				<value>9999</value>
+				<value>8888</value>
+				<value>7777</value>
+				<value>7777</value>
+			</set>
+		</property>
+		<property name="dateList">
+		<set>
+		<ref bean="date"/>
+		<ref bean="dob"/>
+		</set>
+		</property>
+	</bean>
+    <bean id="uInfo" class="com.divs.comp.UniversityInfo">
+    <property name="facultyDetails">
+    <map key-type="java.lang.Integer" value-type="java.lang.String">
+    <entry>
+    <key>
+    <value>10</value>
+    </key>
+    <value>sachin</value>
+    </entry>
+    <entry key="11" value="khpoli"/>
+    </map>
+    </property>
+    
+    <property name="dateList">
+    <map>
+    <entry>
+    <key>
+    <value>10</value>
+    </key>
+    <ref bean="date"/>
+    </entry>
+    <entry key="11" value-ref="dob"/>
+    </map>
+    </property>
+    <property name="iplInfo">
+    <props>
+    <prop key="CSK">dhoni</prop>
+    <prop key="MI">Kholi</prop>
+    </props>
+    </property>
+    </bean>
+
+</beans>

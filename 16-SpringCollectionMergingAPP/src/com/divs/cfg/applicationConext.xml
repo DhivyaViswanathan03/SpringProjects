@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+   <bean id="engCourse" class="com.divs.comp.EnggCourse" abstract="true">
+   <constructor-arg name="subjects">
+   <set>
+   <value>ML</value>
+   <value>C++</value>
+   <value>Java</value>
+   </set>
+   </constructor-arg>
+   </bean>
+   
+   <bean id="engCourse1" class="com.divs.comp.EnggCourse" parent="engCourse">
+   <constructor-arg name="subjects">
+   <set merge="true">
+   <value>Chemistry</value>
+   <value>M3</value>
+   <value>OS</value>
+   </set>
+   </constructor-arg>
+   </bean>
+
+</beans>
